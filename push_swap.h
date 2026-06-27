@@ -1,17 +1,19 @@
-#ifndef	PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "libs/libft/libft.h"
+# include "libs/ft_printf/ft_printf.h"
 
-typedef	struct s_stack
+typedef struct s_stack
 {
 	int				value;
 	int				index;
-	struct	s_stack	*next;
-} t_stack;
+	struct s_stack	*next;
+}	t_stack;
 
-int	parse_numbers(t_stack **a, int argc, char **argv);
+int		parse_numbers(t_stack **a, int argc, char **argv);
 
 t_stack	*new_node(int value);
 void	add_node_back(t_stack **stack, t_stack *node);
