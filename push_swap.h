@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/06 15:31:04 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/07/06 15:31:05 by lucsanto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -65,6 +77,13 @@ typedef struct s_data
 	t_op_count	ops;
 }	t_data;
 
+typedef struct s_chunk
+{
+	int	up;
+	int	down;
+	int	last_up;
+	int	last_down;
+}	t_chunk;
 
 void	init_data(t_data *data);
 void	free_data(t_data *data);
@@ -72,6 +91,9 @@ void	free_data(t_data *data);
 int		parse_options(t_data *data, int argc, char **argv, int *start);
 
 int		parse_numbers(t_stack **a, int argc, char **argv, int start);
+int		is_valid_number(char *token);
+int		convert_to_int(char *token, int *number);
+void	free_numbers(char **numbers);
 
 t_stack	*new_node(int value);
 void	add_node_back(t_stack **stack, t_stack *node);
@@ -132,8 +154,15 @@ void	move_max_to_top_b(t_data *data);
 void	sort_medium(t_data *data);
 
 void	restore_complex_from_b(t_data *data);
+void	update_chunk(t_chunk *chunk, int step, int *counter);
 void	sort_complex(t_data *data);
 
 void	print_benchmark(t_data *data);
+
+void	print_two_digits(int n);
+void	print_percent(double value);
+char	*strategy_name(t_strategy strategy);
+char	*strategy_complexity(t_strategy strategy);
+void	print_operation_pair(char *name, int count);
 
 #endif
