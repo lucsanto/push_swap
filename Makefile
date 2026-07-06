@@ -14,7 +14,8 @@ INCS = -I. -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 SRCS = src/main.c \
 	src/data/data_utils.c \
-	src/parser/parser.c \
+	src/parser/parse_numbers.c \
+	src/parser/parse_numbers_utils.c \
 	src/options/options.c \
 	src/stack/stack_utils.c \
 	src/stack/stack_utils_extra.c \
@@ -34,10 +35,12 @@ SRCS = src/main.c \
 	src/sort/medium_sort.c \
 	src/sort/medium_sort_utils.c \
 	src/sort/complex_sort.c \
+	src/sort/complex_sort_func.c \
 	src/sort/complex_restore.c \
 	src/strategy/strategy.c \
 	src/strategy/disorder.c \
-	src/benchmark/benchmark.c
+	src/benchmark/benchmark_utils.c \
+	src/benchmark/benchmark.c \
 	
 OBJS = $(SRCS:.c=.o)
 
