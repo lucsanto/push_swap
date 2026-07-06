@@ -1,5 +1,16 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_numbers.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/06 15:01:45 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/07/06 15:01:53 by lucsanto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ft_printf.h"
 
 int	ft_putul(unsigned long nb, char *base)
 {
@@ -7,7 +18,7 @@ int	ft_putul(unsigned long nb, char *base)
 	int		counter;
 	int		base_len;
 	char	c[65];
-	
+
 	i = 0;
 	counter = 0;
 	base_len = 0;
