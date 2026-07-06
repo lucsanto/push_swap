@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   complex_sort_func.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 13:49:48 by lucsanto          #+#    #+#             */
-/*   Updated: 2026/05/15 13:49:49 by lucsanto         ###   ########.fr       */
+/*   Created: 2026/07/06 15:21:49 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/07/06 15:21:51 by lucsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strchr(const char *str, int c)
+void	update_chunk(t_chunk *chunk, int step, int *counter)
 {
-	while (*str)
-	{
-		if ((unsigned char)*str == (unsigned char)c)
-			return ((char *)str);
-		str++;
-	}
-	if ((unsigned char)*str == (unsigned char)c)
-		return ((char *)str);
-	return (NULL);
+	expand_chunk(chunk, step);
+	*counter = 0;
 }

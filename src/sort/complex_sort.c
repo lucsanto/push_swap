@@ -1,12 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   complex_sort.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/06 15:14:52 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/07/06 15:14:53 by lucsanto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_chunk
-{
-	int	up;
-	int	down;
-	int	last_up;
-	int	last_down;
-}	t_chunk;
+#include "push_swap.h"
 
 static int	get_complex_chunk_size(int size)
 {
@@ -65,10 +69,7 @@ void	sort_complex(t_data *data)
 		else
 			ra(data);
 		if (counter == step * 2)
-		{
-			expand_chunk(&chunk, step);
-			counter = 0;
-		}
+			update_chunk(&chunk, step, &counter);
 	}
 	restore_complex_from_b(data);
 }
